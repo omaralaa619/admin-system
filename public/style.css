@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin-top: auto;
+  font-family: "Poppins";
+}
+
+.container {
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+  background: white;
+}
+h1 {
+  color: #919999;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  font-weight: lighter;
+}
+.header {
+  border-bottom: 2px solid #d3d4ce;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-signin {
+  margin: 0 3em;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+.ok {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0em;
+  position: relative;
+}
+.form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  border: 2px solid #d3d4ce;
+}
+button {
+  width: 13em;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  text-decoration: none;
+  color: white;
+  background: #216c9e;
+  padding: 10px 20px;
+  margin-left: 20px;
+  border-radius: 1px;
+  border: none;
+  cursor: pointer;
+  transition: 0.4s;
+}
+button:hover {
+  background-color: #3399ff;
+}
+label {
+  color: #919999;
+  font-size: 0.9em;
+}
+input:focus {
+  border: 2px solid #3399ff;
+
+  transition: 0.4s;
+}
+input {
+  outline: none;
+}
+.error {
+  color: red;
+}
