@@ -1,3 +1,6 @@
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
 const express = require("express");
 const mongoose = require("mongoose");
 const Article = require("./models/article");
@@ -6,12 +9,13 @@ const connectDB = require("./config/db");
 const articleRouter = require("./routes/articles");
 const usersRouter = require("./routes/users");
 const methodOverride = require("method-override");
-const app = express();
 const bcrypt = require("bcrypt");
 const passport = require("passport");
 const flash = require("express-flash");
 const session = require("express-session");
 const path = require("path");
+const app = express();
+const port = process.env.PORT;
 
 connectDB();
 const initializePassport = require("./passport-config");
@@ -30,7 +34,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(flash());
 app.use(
   session({
-    secret: "secret",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
   })
@@ -82,4 +86,6 @@ function checkNotAuthenticated(req, res, next) {
 app.use("/articles", checkAuthenticated, articleRouter);
 app.use("/users", checkAuthenticated, usersRouter);
 
-app.listen(4000);
+app.listen(port, () => {
+  console.log(`running on port ${port}`);
+});
