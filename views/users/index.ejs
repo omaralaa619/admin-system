@@ -10,11 +10,16 @@
       crossorigin="anonymous"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style1.css" />
     <title>Users</title>
   </head>
   <body>
+    <div class="manage">
+      <a href="/">All Entries</a>
+      <a href="/users/register">Create User</a>
+    </div>
     <div class="container">
-      <h1 class="mb-4 text-center">User Management.</h1>
+      <h1 class="mb-4 text-center">User Management</h1>
 
       <% users.forEach(user => { %>
       <div class="card mt-4">

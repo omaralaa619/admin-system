@@ -43,7 +43,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride("_method"));
 
-app.get("/", checkAuthenticated, async (req, res) => {
+app.get("/", checkNotAuthenticated, async (req, res) => {
   const articles = await Article.find().sort({ createdAt: "desc" });
   res.render("articles/index", { articles: articles });
 });
@@ -83,8 +83,8 @@ function checkNotAuthenticated(req, res, next) {
   }
   next();
 }
-app.use("/articles", checkAuthenticated, articleRouter);
-app.use("/users", checkAuthenticated, usersRouter);
+app.use("/articles", checkNotAuthenticated, articleRouter);
+app.use("/users", checkNotAuthenticated, usersRouter);
 
 app.listen(port, () => {
   console.log(`running on port ${port}`);
