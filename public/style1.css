@@ -1,27 +1,80 @@
+body {
+  background: whitesmoke;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.manage {
+.bar-container {
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 15em;
+  height: 100%;
+  padding: 1em 0;
+  background: white;
+}
+.center {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
-.manage a {
-  text-decoration: none;
-  padding: 10px 20px;
-  margin: 10px 20px;
-  border-radius: 1px;
-  border: none;
-  cursor: pointer;
-  width: 9em;
-  transition: 0.4s;
-  background: #216c9e;
-  text-decoration: none;
-  color: white;
+.logo-container {
+  margin-left: -1em;
+  display: flex;
 }
-.manage a:hover {
-  background-color: #2177cc;
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+}
+.rest-content {
+  width: 100%;
+}
+img {
+  width: 2em;
+  height: 2em;
+}
+.logo-text {
+  font-size: 1.5em;
+  margin-left: 0.7em;
+  letter-spacing: -0.5px;
+}
+.sec-logo {
+  color: #54667a;
+  font-weight: lighter;
+  margin-left: -0.05em;
+}
+.profile {
+  margin-top: 1em;
+}
+.prof-img {
+  height: 3em;
+  width: 3em;
+}
+.user-name {
+  margin-left: -1em;
+}
+.main-menu {
+  color: #686868;
+}
+.nav-links {
+  list-style: none;
+}
+.nav-links a {
+  color: #686868;
+  display: block;
+  text-decoration: none;
+}
+
+.link {
+  margin-left: -2.4em;
+  padding: 0.9375em;
+}
+.link:hover {
+  background: whitesmoke;
 }

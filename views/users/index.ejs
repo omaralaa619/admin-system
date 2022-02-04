@@ -14,29 +14,30 @@
     <title>Users</title>
   </head>
   <body>
-    <div class="manage">
-      <a href="/">All Entries</a>
-      <a href="/users/register">Create User</a>
-    </div>
-    <div class="container">
-      <h1 class="mb-4 text-center">User Management</h1>
+    <div class="main-container">
+      <div class="side-bar"><%- include('../_side_bar') %></div>
+      <div class="rest-content">
+        <div class="container">
+          <h1 class="mb-4 text-center">User Management</h1>
 
-      <% users.forEach(user => { %>
-      <div class="card mt-4">
-        <div class="card-body">
-          <h4 class="card-title"><%= user.name %></h4>
+          <% users.forEach(user => { %>
+          <div class="card mt-4">
+            <div class="card-body">
+              <h4 class="card-title"><%= user.name %></h4>
 
-          <div class="card-text mb-2"><%= user.email %></div>
-          <form
-            action="/users/<%= user.id %>?_method=DELETE"
-            method="POST"
-            class="d-inline"
-          >
-            <button type="submit" class="btn btn-danger">Delete</button>
-          </form>
+              <div class="card-text mb-2"><%= user.email %></div>
+              <form
+                action="/users/<%= user.id %>?_method=DELETE"
+                method="POST"
+                class="d-inline"
+              >
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </form>
+            </div>
+          </div>
+          <% }) %>
         </div>
       </div>
-      <% }) %>
     </div>
   </body>
 </html>

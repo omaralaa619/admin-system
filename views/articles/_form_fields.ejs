@@ -1,26 +1,42 @@
-<div class="form-group">
-  <label for="title">Title</label>
-  <input
-    required
-    value="<%= article.title %>"
-    type="text"
-    name="title"
-    id="title"
-    class="form-control"
-  />
-</div>
-<div class="form-group">
-  <label for="description">Description</label>
-  <textarea name="description" id="description" class="form-control">
-<%= article.description %></textarea
-  >
-</div>
-<div class="form-group">
-  <label for="markdown">Deatails</label>
-  <textarea required name="markdown" id="markdown" class="form-control">
-<%= article.markdown %></textarea
-  >
-</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+  , initial-scale=1.0"
+    />
+    <link rel="stylesheet" href="/style1.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input
+        required
+        value="<%= article.title %>"
+        type="text"
+        name="title"
+        id="title"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea name="description" id="description" class="form-control">
+      <%= article.description %></textarea
+      >
+    </div>
+    <div class="form-group">
+      <label for="markdown">Deatails</label>
+      <textarea required name="markdown" id="markdown" class="form-control">
+        <%= article.markdown %></textarea
+      >
+    </div>
 
-<a href="/" class="btn btn-secondary">Cancel</a>
-<button type="submit" class="btn btn-primary">Save</button>
+    <a href="/" class="btn btn-secondary">Cancel</a>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </body>
+</html>
