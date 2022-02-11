@@ -1,0 +1,12 @@
+.top-container {
+  height: 8vh;
+  background: dimgray;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.user-top {
+  margin-top: 0.2em;
+  margin-right: 2em;
+}

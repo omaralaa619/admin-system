@@ -1,0 +1,16 @@
+svg {
+  fill: #686868;
+}
+.manage-users-svg {
+  fill: orange;
+}
+.manage-link {
+  font-weight: bold;
+}
+.container {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.selected-bar-manage {
+  display: block;
+}

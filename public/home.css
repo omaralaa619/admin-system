@@ -1,0 +1,23 @@
+body {
+  background: whitesmoke;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-svg {
+  fill: orange;
+}
+.home-link {
+  font-weight: bold;
+}
+
+.selected-bar-home {
+  display: block;
+}
