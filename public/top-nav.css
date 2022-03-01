@@ -1,12 +1,43 @@
 .top-container {
-  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4em;
   background: dimgray;
   color: white;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
 }
 .user-top {
   margin-top: 0.2em;
   margin-right: 2em;
+}
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+}
+.right-top-nav {
+  display: flex;
+  cursor: pointer;
+}
+.burger {
+  margin-left: 1em;
+  display: none;
+}
+.top-nav-logo {
+  display: none;
+}
+
+@media screen and (max-width: 620px) {
+  body {
+    overflow-x: hidden;
+  }
+  .bar-container {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 7vh;
+    background: dimgray;
+    transform: translateX(100%);
+  }
 }

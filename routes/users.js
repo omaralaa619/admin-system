@@ -13,7 +13,7 @@ router.delete("/:id", async (req, res) => {
   res.redirect("/users");
 });
 router.get("/register", (req, res) => {
-  res.render("register.ejs");
+  res.render("users/register.ejs");
 });
 
 router.post("/register", async (req, res) => {
