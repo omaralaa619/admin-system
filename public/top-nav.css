@@ -2,18 +2,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 4em;
-  background: dimgray;
-  color: white;
+  height: 7vh;
+  background: white;
+  color: black;
 }
 .user-top {
   margin-top: 0.2em;
-  margin-right: 2em;
+  margin-left: 2em;
 }
 .burger div {
   width: 25px;
   height: 3px;
-  background-color: white;
+  background-color: black;
   margin: 5px;
 }
 .right-top-nav {
@@ -21,9 +21,10 @@
   cursor: pointer;
 }
 .burger {
-  margin-left: 1em;
+  margin-right: 2em;
   display: none;
 }
+
 .top-nav-logo {
   display: none;
 }
@@ -36,8 +37,33 @@
     position: absolute;
     right: 0px;
     height: 92vh;
+    min-height: 92vh;
     top: 7vh;
-    background: dimgray;
+    background: white;
     transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+    z-index: 1;
+    box-shadow: 0 5px 0px 0 rgba(0, 0, 0, 0.2);
   }
+  .burger {
+    display: block;
+  }
+  .line2,
+  .line3,
+  .line1 {
+    transition: all 0.5s ease-in;
+  }
+}
+
+.side-bar-active {
+  transform: translateX(0%);
+}
+.rotate-line {
+  transform: translateY(15.2px) rotate(45deg);
+}
+.rotate-line-2 {
+  transform: rotate(-45deg);
+}
+.none {
+  opacity: 0;
 }

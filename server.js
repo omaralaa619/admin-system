@@ -25,9 +25,6 @@ initializePassport(
   async (id) => await User.findOne({ _id: id })
 );
 
-const users = [
-  { name: "omar", email: "omaralaa619@gmsail.com", password: "paa" },
-];
 app.use(express.static(path.join(__dirname + "/public")));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
