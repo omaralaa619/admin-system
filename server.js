@@ -40,15 +40,30 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride("_method"));
 
-app.get("/", checkAuthenticated, async (req, res) => {
+app.get("/test", checkAuthenticated, async (req, res) => {
+  const user = await req.user;
   const articles = await Article.find().sort({ createdAt: "desc" });
-  res.render("articles/index", { articles: articles });
+  const all = {};
+  all.user = user;
+  all.articles = articles;
+  console.log(articles);
+  res.render("test", { all: all });
 });
+
+app.get("/", checkAuthenticated, async (req, res) => {
+  const user = await req.user;
+  const articles = await Article.find().sort({ createdAt: "desc" });
+  const all = {};
+  all.user = user;
+  all.articles = articles;
+
+  res.render("articles/index", { all: all });
+});
+
 app.get("/login", checkNotAuthenticated, async (req, res) => {
   const users = await User.find().sort({ name: "desc" });
 
   res.render("login.ejs", { users: users });
-  console.log(users);
 });
 
 app.post(

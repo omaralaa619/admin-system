@@ -5,8 +5,11 @@ const bcrypt = require("bcrypt");
 const path = require("path");
 
 router.get("/", async (req, res) => {
-  const users = await User.find().sort({ createdAt: "desc" });
-  res.render("users/index", { users: users });
+  const all = {};
+  all.user = await req.user;
+
+  all.users = await User.find().sort({ createdAt: "desc" });
+  res.render("users/index", { all: all });
 });
 router.delete("/:id", async (req, res) => {
   await User.findByIdAndDelete(req.params.id);
