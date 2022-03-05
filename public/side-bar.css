@@ -89,3 +89,14 @@ svg {
 svg {
   fill: #686868;
 }
+.logout-button {
+  border: none;
+  background: white;
+  cursor: pointer;
+  color: #686868;
+  width: 119.2%;
+  outline: none;
+}
+.logout-button:focus {
+  outline: 0;
+}
