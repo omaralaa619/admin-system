@@ -18,6 +18,7 @@
       <div class="text-muted mb-2">
         <%= article.createdAt.toLocaleDateString() %>
       </div>
+      <div class="doneBy">Created By: <%= article.createdBy %></div>
       <a href="/" class="btn btn-secondary">All Entries</a>
       <a href="/articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
 

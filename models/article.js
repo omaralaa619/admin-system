@@ -23,6 +23,10 @@ const articleSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+  createdBy: {
+    type: String,
+    required: true,
+  },
 });
 
 articleSchema.pre("validate", function (next) {

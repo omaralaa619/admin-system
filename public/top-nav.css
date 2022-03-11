@@ -5,6 +5,7 @@
   height: 7vh;
   background: white;
   color: black;
+  display: none;
 }
 .user-top {
   margin-top: 0.2em;
@@ -32,6 +33,9 @@
 @media screen and (max-width: 620px) {
   body {
     overflow-x: hidden;
+  }
+  .top-container {
+    display: flex;
   }
   .bar-container {
     position: absolute;

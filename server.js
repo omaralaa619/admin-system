@@ -21,7 +21,7 @@ connectDB();
 const initializePassport = require("./passport-config");
 initializePassport(
   passport,
-  async (email) => await User.findOne({ email: email }),
+  async (username) => await User.findOne({ username: username }),
   async (id) => await User.findOne({ _id: id })
 );
 
@@ -56,6 +56,7 @@ app.get("/", checkAuthenticated, async (req, res) => {
   const all = {};
   all.user = user;
   all.articles = articles;
+  console.log(all.articles);
 
   res.render("articles/index", { all: all });
 });
