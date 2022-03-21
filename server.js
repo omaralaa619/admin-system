@@ -41,7 +41,7 @@ app.use(
 );
 app.use(
   cors({
-    origin: "http://127.0.0.1:5500",
+    origin: "https://fancy-monstera-ac53ea.netlify.app/",
   })
 );
 app.use(passport.initialize());
@@ -105,7 +105,7 @@ function checkNotAuthenticated(req, res, next) {
   next();
 }
 app.use("/entries", checkAuthenticated, entryRouter);
-app.use("/users", checkNotAuthenticated, usersRouter);
+app.use("/users", checkAuthenticated, usersRouter);
 app.use("/api", checkNotAuthenticated, apiRouter);
 app.use("/search", checkNotAuthenticated, searchRouter);
 
