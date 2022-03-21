@@ -105,7 +105,7 @@ function checkNotAuthenticated(req, res, next) {
   next();
 }
 app.use("/entries", checkAuthenticated, entryRouter);
-app.use("/users", checkAuthenticated, usersRouter);
+app.use("/users", checkNotAuthenticated, usersRouter);
 app.use("/api", checkNotAuthenticated, apiRouter);
 app.use("/search", checkNotAuthenticated, searchRouter);
 
