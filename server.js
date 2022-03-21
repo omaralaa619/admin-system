@@ -3,17 +3,20 @@ if (process.env.NODE_ENV !== "production") {
 }
 const express = require("express");
 const mongoose = require("mongoose");
-const Article = require("./models/article");
+const Entry = require("./models/entry");
 const User = require("./models/user");
 const connectDB = require("./config/db");
-const articleRouter = require("./routes/articles");
+const entryRouter = require("./routes/entries");
 const usersRouter = require("./routes/users");
+const apiRouter = require("./routes/api");
+const searchRouter = require("./routes/search");
 const methodOverride = require("method-override");
 const bcrypt = require("bcrypt");
 const passport = require("passport");
 const flash = require("express-flash");
 const session = require("express-session");
 const path = require("path");
+const cors = require("cors");
 const app = express();
 const port = process.env.PORT;
 
@@ -36,27 +39,32 @@ app.use(
     saveUninitialized: false,
   })
 );
+app.use(
+  cors({
+    origin: "http://127.0.0.1:5500",
+  })
+);
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride("_method"));
 
 app.get("/test", checkAuthenticated, async (req, res) => {
   const user = await req.user;
-  const articles = await Article.find().sort({ createdAt: "desc" });
+  const entries = await Entry.find().sort({ createdAt: "desc" });
   const all = {};
   all.user = user;
-  all.articles = articles;
-  console.log(articles);
+  all.entries = entries;
+  console.log(entries);
   res.render("test", { all: all });
 });
 
 app.get("/", checkAuthenticated, async (req, res) => {
   const user = await req.user;
-  const articles = await Article.find().sort({ createdAt: "desc" });
+  const entries = await Entry.find().sort({ createdAt: "desc" });
   const all = {};
   all.user = user;
-  all.articles = articles;
-  console.log(all.articles);
+  all.entries = entries;
+  console.log(all.entries);
 
   res.render("articles/index", { all: all });
 });
@@ -96,8 +104,10 @@ function checkNotAuthenticated(req, res, next) {
   }
   next();
 }
-app.use("/articles", checkAuthenticated, articleRouter);
+app.use("/entries", checkAuthenticated, entryRouter);
 app.use("/users", checkAuthenticated, usersRouter);
+app.use("/api", checkNotAuthenticated, apiRouter);
+app.use("/search", checkNotAuthenticated, searchRouter);
 
 app.listen(port, () => {
   console.log(`running on port ${port}`);

@@ -13,26 +13,54 @@
   </head>
   <body>
     <div class="form-group">
-      <label for="title">Title</label>
+      <label for="institution">institution</label>
       <input
         required
-        value="<%= article.title %>"
+        value="<%= entry.institution %>"
         type="text"
-        name="title"
-        id="title"
+        name="institution"
+        id="institution"
         class="form-control"
       />
     </div>
     <div class="form-group">
-      <label for="description">Description</label>
-      <textarea name="description" id="description" class="form-control">
-      <%= article.description %></textarea
+      <label for="field">field</label>
+      <textarea name="field" id="field" class="form-control">
+<%= entry.field %></textarea
       >
     </div>
     <div class="form-group">
-      <label for="markdown">Deatails</label>
-      <textarea required name="markdown" id="markdown" class="form-control">
-        <%= article.markdown %></textarea
+      <label for="adress">Adress</label>
+      <textarea name="adress" id="adress" class="form-control">
+<%= entry.adress %></textarea
+      >
+    </div>
+    <div class="form-group">
+      <label for="number">Number</label>
+      <textarea name="number" id="number" class="form-control">
+<%= entry.number %></textarea
+      >
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <textarea name="email" id="email" class="form-control">
+<%= entry.email %></textarea
+      >
+    </div>
+    <div class="form-group">
+      <label for="website">Website</label>
+      <textarea name="website" id="website" class="form-control">
+<%= entry.website %></textarea
+      >
+    </div>
+    <div class="form-group">
+      <label for="institutionType">institutionType</label>
+      <textarea
+        name="institutionType"
+        id="institutionType"
+        class="form-control"
+      >
+<%= entry.institutionType %></textarea
       >
     </div>
 

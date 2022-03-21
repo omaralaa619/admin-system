@@ -23,25 +23,25 @@
         <div class="container">
           <div class="header">
             <h1 class="mb-4">All Entries</h1>
-            <a href="/articles/new" class="btn btn-success">New Entry</a>
+            <a href="/entries/new" class="btn btn-success">New Entry</a>
           </div>
 
-          <% all.articles.forEach(article => { %>
+          <% all.entries.forEach(article => { %>
           <div class="card mt-4">
             <div class="card-body">
-              <h4 class="card-title"><%= article.title %></h4>
+              <h4 class="card-title"><%= article.institution %></h4>
               <div class="card-subtitle text-muted mb-2">
-                <%= article.createdAt.toLocaleDateString() %>
+                <%= article.field %>
               </div>
               <div class="card-text mb-2"><%= article.description %></div>
-              <a href="articles/<%= article.slug %>" class="btn btn-primary"
+              <a href="entries/<%= article.slug %>" class="btn btn-primary"
                 >Read More</a
               >
-              <a href="articles/edit/<%= article.id %>" class="btn btn-info"
+              <a href="entries/edit/<%= article.id %>" class="btn btn-info"
                 >Edit</a
               >
               <form
-                action="/articles/<%= article.id %>?_method=DELETE"
+                action="/entries/<%= article.id %>?_method=DELETE"
                 method="POST"
                 class="d-inline"
               >
@@ -53,5 +53,8 @@
         </div>
       </div>
     </div>
+    <script>
+      console.log("ahsa");
+    </script>
   </body>
 </html>

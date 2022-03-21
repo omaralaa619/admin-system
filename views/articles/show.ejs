@@ -14,15 +14,20 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="mb-1"><%= article.title %></h1>
-      <div class="text-muted mb-2">
-        <%= article.createdAt.toLocaleDateString() %>
+      <h1 class="mb-1"><%= entry.title %></h1>
+      <div class="text-muted mb-2"><%= entry.field %></div>
+      <div class="doneBy">
+        <a
+          href="https://www.giz.de/en/worldwide/319.html
+"
+        >
+          Created By: <%= entry.createdBy %></a
+        >
       </div>
-      <div class="doneBy">Created By: <%= article.createdBy %></div>
       <a href="/" class="btn btn-secondary">All Entries</a>
-      <a href="/articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
+      <a href="/entries/edit/<%= entry.id %>" class="btn btn-info">Edit</a>
 
-      <div><%- article.markdown %></div>
+      <div><%- entry.markdown %></div>
     </div>
   </body>
 </html>
