@@ -26,8 +26,6 @@ const entrySchema = new mongoose.Schema({
 
   slug: {
     type: String,
-    required: true,
-    unique: true,
   },
   createdBy: {
     type: String,
