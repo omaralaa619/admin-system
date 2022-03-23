@@ -41,7 +41,7 @@ app.use(
 );
 app.use(
   cors({
-    origin: "https://fancy-monstera-ac53ea.netlify.app",
+    origin: "http://127.0.0.1:5500",
   })
 );
 app.use(passport.initialize());

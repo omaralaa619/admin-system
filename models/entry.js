@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const marked = require("marked");
-const slugify = require("slugify");
 
 const entrySchema = new mongoose.Schema({
   institution: {
@@ -24,9 +23,6 @@ const entrySchema = new mongoose.Schema({
     type: String,
   },
 
-  slug: {
-    type: String,
-  },
   createdBy: {
     type: String,
     required: true,
@@ -35,14 +31,6 @@ const entrySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-});
-
-entrySchema.pre("validate", function (next) {
-  if (this.institution) {
-    this.slug = slugify(this.institution, { lower: true, strict: true });
-  }
-
-  next();
 });
 
 module.exports = mongoose.model("Entry", entrySchema);

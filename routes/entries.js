@@ -11,8 +11,8 @@ router.get("/edit/:id", async (req, res) => {
   res.render("articles/edit", { entry: entry });
 });
 
-router.get("/:slug", async (req, res) => {
-  const entry = await Entry.findOne({ slug: req.params.slug });
+router.get("/:id", async (req, res) => {
+  const entry = await Entry.findById(req.params.id);
   if (entry == null) res.redirect("/");
   res.render("articles/show", { entry: entry });
 });
@@ -55,7 +55,7 @@ function saveArticleAndRedirect(path) {
 
     try {
       entry = await entry.save();
-      res.redirect(`/entries/${entry.slug}`);
+      res.redirect(`/entries/${entry.id}`);
     } catch (e) {
       res.render(`entries/${path}`, { entry: entry });
       console.log(e);
