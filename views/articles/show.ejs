@@ -12,18 +12,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Blog</title>
   </head>
-  <body>
+  <body style="text-align: right">
     <div class="container">
       <h1 class="mb-1"><%= entry.institution %></h1>
-      <div class="text-muted mb-2"><%= entry.field %></div>
-      <div class="doneBy">
-        <a
-          href="https://www.giz.de/en/worldwide/319.html
-"
-        >
-          Created By: <%= entry.createdBy %></a
-        >
-      </div>
+      <h3><%= entry.field %></h3>
+      <h4><%= entry.institutionType %></h4>
+      <p><%= entry.address %></p>
+      <p><%= entry.email %></p>
+      <p><%= entry.number %></p>
+      <p><%= entry.website %></p>
+
       <a href="/" class="btn btn-secondary">All Entries</a>
       <a href="/entries/edit/<%= entry.id %>" class="btn btn-info">Edit</a>
 
