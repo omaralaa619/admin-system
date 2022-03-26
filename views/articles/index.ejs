@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
@@ -22,16 +22,18 @@
 
         <div class="container">
           <div class="header">
-            <h1 class="mb-4">All Entries</h1>
-            <a href="/entries/new" class="btn btn-success">New Entry</a>
+            <h1 class="mb-4">جميع البيانات</h1>
+            <a href="/entries/new" class="btn btn-success"
+              >ادخال بيانات جديدة</a
+            >
           </div>
           <div class="search-bar">
             <input
               type="text"
               id="searchBar"
               name="searchBar"
-              class="searchBar"
-              placeholder="search"
+              class="searchBar text-right"
+              placeholder="بحث"
             />
           </div>
 
@@ -43,20 +45,19 @@
                 <div class="card-subtitle text-muted mb-2">
                   <%= article.field %>
                 </div>
-                <div class="card-text mb-2"><%= article.description %></div>
-                <a href="entries/<%= article.id %>" class="btn btn-primary"
-                  >Read More</a
-                >
-                <a href="entries/edit/<%= article.id %>" class="btn btn-info"
-                  >Edit</a
-                >
                 <form
                   action="/entries/<%= article.id %>?_method=DELETE"
                   method="POST"
                   class="d-inline"
                 >
-                  <button type="submit" class="btn btn-danger">Delete</button>
+                  <button type="submit" class="btn btn-danger">مسح</button>
                 </form>
+                <a href="entries/<%= article.id %>" class="btn btn-primary"
+                  >المزيد</a
+                >
+                <a href="entries/edit/<%= article.id %>" class="btn btn-info"
+                  >التعديل</a
+                >
               </div>
             </div>
             <% }) %>

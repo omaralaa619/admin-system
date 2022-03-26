@@ -35,6 +35,24 @@ const entrySchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  stratigicPlan: {
+    type: String,
+  },
+  intrestedAswan: {
+    type: String,
+  },
+  demands: {
+    type: String,
+  },
+  supportType: {
+    type: String,
+  },
+  orderTime: {
+    type: String,
+  },
+  communicationType: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("Entry", entrySchema);

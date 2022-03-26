@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,9 +12,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Edit</title>
   </head>
-  <body>
+  <body style="text-align: right">
     <div class="container">
-      <h1 class="mb-4">Edit Entry</h1>
+      <h1 class="mb-4">تعديل البيانات</h1>
 
       <form action="/entries/<%= entry.id %>?_method=PUT" method="POST">
         <%- include('_form_fields') %>

@@ -20,10 +20,21 @@
       <p><%= entry.address %></p>
       <p><%= entry.email %></p>
       <p><%= entry.number %></p>
-      <p><%= entry.website %></p>
+      <h5>هل توجد خطة استراتيجية للتنمية</h5>
+      <p><%= entry.stratigicPlan %></p>
+      <h5>الاهتمام بالعمل في محافظة أسوان</h5>
+      <p><%= entry.intrestedAswan %></p>
+      <h5>الاشتراطات الواجب توافرها في الجمعية طالبة المتحة</h5>
+      <p><%= entry.demands %></p>
+      <h5>نوع المشاركة والدعم</h5>
+      <p><%= entry.supportType %></p>
+      <h5>كيفية التواصل من قبل الجمعيات</h5>
+      <p><%= entry.communicationType %></p>
+      <h5>هل في موعد معين لتلقي الطلبات</h5>
+      <p><%= entry.orderTime %></p>
 
-      <a href="/" class="btn btn-secondary">All Entries</a>
-      <a href="/entries/edit/<%= entry.id %>" class="btn btn-info">Edit</a>
+      <a href="/" class="btn btn-secondary">الرجوع</a>
+      <a href="/entries/edit/<%= entry.id %>" class="btn btn-info">التعديل</a>
     </div>
   </body>
 </html>
