@@ -51,12 +51,12 @@ function saveArticleAndRedirect(path) {
     entry.email = req.body.email;
     entry.website = req.body.website;
     entry.institutionType = req.body.institutionType;
+    entry.stratigicPlan = req.body.stratigicPlan;
     entry.demands = req.body.demands;
     entry.supportType = req.body.supportType;
     entry.orderTime = req.body.orderTime;
     entry.communicationType = req.body.communicationType;
     entry.intrestedAswan = req.body.intrestedAswan;
-    entry.communicationType = req.body.communicationType;
     entry.createdBy = createdBy.name;
 
     try {
